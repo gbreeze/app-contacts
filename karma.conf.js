@@ -1,6 +1,7 @@
 "use strict";
 const path = require('path');
 const project = require('./aurelia_project/aurelia.json');
+const tsconfig = require('./tsconfig.json');
 
 let testSrc = [
   { pattern: project.unitTestRunner.source, included: false },
@@ -22,13 +23,22 @@ module.exports = function(config) {
     preprocessors: {
       [project.unitTestRunner.source]: [project.transpiler.id]
     },
-    'babelPreprocessor': { options: project.transpiler.options },
+    typescriptPreprocessor: {
+      typescript: require('typescript'),
+      options: tsconfig.compilerOptions
+    },
     reporters: ['progress'],
     port: 9876,
     colors: true,
     logLevel: config.LOG_INFO,
     autoWatch: true,
     browsers: ['Chrome'],
-    singleRun: false
+    singleRun: false,
+    // client.args must be a array of string.
+    // Leave 'aurelia-root', project.paths.root in this order so we can find
+    // the root of the aurelia project.
+    client: {
+      args: ['aurelia-root', project.paths.root]
+    }
   });
 };

@@ -2,6 +2,12 @@
   var karma = global.__karma__;
   var requirejs = global.requirejs
   var locationPathname = global.location.pathname;
+  var root = 'src';
+  karma.config.args.forEach(function(value, index) {
+    if (value === 'aurelia-root') {
+      root = karma.config.args[index + 1];
+    }
+  });
 
   if (!karma || !requirejs) {
     return;
@@ -46,10 +52,10 @@
       return originalLoadFn.call(this, context, moduleName, url)
     }
 
-    let originalDefine = global.define;
+    var originalDefine = global.define;
     global.define = function(name, deps, m) {
       if (typeof name === 'string') {
-        originalDefine('/base/src/' + name, [name], function (result) { return result; });
+        originalDefine('/base/' + root + '/' + name, [name], function (result) { return result; });
       }
 
       return originalDefine(name, deps, m);
