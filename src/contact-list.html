@@ -1,6 +1,6 @@
 <template>
   <div class="contact-list">
-    <ul class="list-group">
+    <ul class="list-group" sortable.bind="options" sortable-move.delegate="func($event)">
       <li repeat.for="contact of contacts" class="list-group-item ${contact.id === $parent.selectedId ? 'active' : ''}">
         <a route-href="route: contacts; params.bind: {id:contact.id}" click.delegate="$parent.select(contact)">
           <h4 class="list-group-item-heading">${contact.firstName} ${contact.lastName}</h4>

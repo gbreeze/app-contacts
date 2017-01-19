@@ -151,6 +151,16 @@
             "resources": [
               "nprogress.css"
             ]
+          },
+          {
+            "name": "sortablejs",
+            "path": "../node_modules/sortablejs/",
+            "main": "sortable"
+          },
+          {
+            "name": "aurelia-sortablejs",
+            "path": "../node_modules/aurelia-sortablejs/dist/amd",
+            "main": "index"
           }
         ]
       }
