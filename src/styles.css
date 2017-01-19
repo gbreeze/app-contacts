@@ -50,3 +50,12 @@ li.list-group-item > a {
 li.list-group-item.active > a {
   color: white;
 }
+
+
+.move {
+    cursor: move;
+    margin: 5px 0;
+    background-color: darkgrey;
+    display: inline-block;
+    padding: 0 5px;
+}
