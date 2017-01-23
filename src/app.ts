@@ -9,10 +9,10 @@ export class App {
   constructor(public api: WebAPI) {}
 
   configureRouter(config: RouterConfiguration, router: Router){
-    config.title = 'Contacts';
+    config.title = 'Test App';
     config.map([
-      { route: '',              moduleId: 'no-selection',   title: 'Select'},
-      { route: 'contacts/:id',  moduleId: 'contact-detail', name:'contacts' }
+      { route: '',              moduleId: 'test-1',   title: 'test 1'},
+      { route: 'test-1',  moduleId: 'test-1', name:'test 1' }
     ]);
 
     this.router = router;
