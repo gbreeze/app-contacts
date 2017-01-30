@@ -2,9 +2,10 @@ import { autoinject } from 'aurelia-framework';
 import { WebAPI } from './web-api';
 
 @autoinject
-export class Test1ViewModel {
+export class List1ViewModel {
 
     statusText: string
+    data: Array<any>
 
 
     constructor(private api: WebAPI) {
@@ -22,8 +23,8 @@ export class Test1ViewModel {
 
         console.log("doWork")
         try {
-            let data = await this.api.getContactList(true)
-            console.log("Data", data)
+            this.data = await this.api.getContactList()
+            console.log("Data", this.data)
         } catch (error) {
             console.error(error)
         }

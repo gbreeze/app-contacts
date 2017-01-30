@@ -1,0 +1,36 @@
+<template>
+
+    <require from="./resources/elements/list-view"></require>
+
+
+    <h1>List 1</h1>
+
+    <hr>
+
+
+
+    <list-view items.bind="data">
+        <!--<div slot="item-template">my item ${firstName}</div>-->
+
+        <!--
+            http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/cheat-sheet/9
+            http://davismj.me/blog/semantic-template-parts/
+            http://stackoverflow.com/questions/32405372/binding-to-a-custom-element-in-a-template-part-in-aurelia
+            http://plnkr.co/edit/PkXysZ?p=preview
+        -->
+        <template replace-part="item-template">
+            Replacement: ${item.firstName}
+        </template>
+
+        <template replace-part="group-header-template">
+            <div>my group header</div>
+        </template>
+    </list-view>
+
+
+
+    <hr>
+
+    <button click.trigger="click()">Load list</button>
+
+</template>

@@ -1,0 +1,31 @@
+<template>
+
+    <div class="list-view-container">
+        <p>list view</p>
+        <ul>
+            <li repeat.for="item of items">
+
+                <!--
+                    <slot> is not working :(
+                    <slot name="item-template"></slot>
+
+                    Template Parts:
+                    http://aurelia.io/hub.html#/doc/article/aurelia/framework/latest/cheat-sheet/9
+                    http://davismj.me/blog/semantic-template-parts/
+                    http://stackoverflow.com/questions/32405372/binding-to-a-custom-element-in-a-template-part-in-aurelia
+                    http://plnkr.co/edit/PkXysZ?p=preview
+                -->
+
+                <template replaceable part="item-template">
+                    <p>item</p>
+                </template>
+
+                <template replaceable part="group-header-template">
+                    <p>group header</p>
+                </template>
+
+            </li>
+        </ul>
+
+    </div>
+</template>

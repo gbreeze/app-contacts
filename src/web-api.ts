@@ -48,7 +48,7 @@ export class WebAPI {
 
     getContactList(throwException = false) {
         this.isRequesting = true;
-        return new Promise((resolve, reject) => {
+        return new Promise<Array<any>>((resolve, reject) => {
             setTimeout(() => {
 
                 if (throwException) {
