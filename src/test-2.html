@@ -1,0 +1,21 @@
+<template>
+
+    <require from="./test-2.css"></require>
+
+
+    <h1>Test 2</h1>
+
+    <div class="test2">
+
+        <ul class="animated-collection au-stagger">
+            <li repeat.for="item of items" class="au-animate">
+                <span click.trigger="remove(item)">X</span> ${item}
+            </li>
+        </ul>
+
+
+        <button click.trigger="click()">Test</button>
+
+    </div>
+
+</template>

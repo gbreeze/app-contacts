@@ -78,7 +78,9 @@ export class ListView {
     private itemsDraggableChanged(newValue: boolean, oldValue: boolean) {
 
         if (newValue) {
-            //this.sortablejs = Sortable.create(document.querySelector('ul.items'), {})            
+            // this.sortablejs = Sortable.create(document.querySelector('ul.items'), {})   
+            // TODO: submit option and reorder the items after dragging
+            // https://github.com/rubaxa/Sortable
             this.sortablejs = new Sortable(document.querySelector('ul.items'))
         }
         else {

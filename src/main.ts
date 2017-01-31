@@ -12,7 +12,8 @@ export function configure(aurelia: Aurelia) {
   aurelia.use
     .standardConfiguration()
     .feature('resources')
-    .plugin('aurelia-sortablejs');
+    .plugin('aurelia-sortablejs')
+    .plugin('aurelia-animator-css')
 
   if (environment.debug) {
     aurelia.use.developmentLogging();
