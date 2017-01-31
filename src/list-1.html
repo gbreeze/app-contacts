@@ -9,7 +9,7 @@
 
 
 
-    <list-view items.bind="data">
+    <list-view items.bind="data" selection-mode.bind="selectionMode" items-draggable.bind="itemsDraggable">
         <!--<div slot="item-template">my item ${firstName}</div>-->
 
         <!--
@@ -19,7 +19,7 @@
             http://plnkr.co/edit/PkXysZ?p=preview
         -->
         <template replace-part="item-template">
-            Replacement: ${item.firstName}
+            ${item.firstName} - ${item.lastName}
         </template>
 
         <template replace-part="group-header-template">
@@ -31,6 +31,8 @@
 
     <hr>
 
-    <button click.trigger="click()">Load list</button>
+    <button click.trigger="loadList()">(Re)load list</button>
+    <button click.trigger="toggleSelectionMode()">Toggle Selection Mode</button>
+    <button click.trigger="toggleItemsDraggable()">Toggle Items Draggable</button>
 
 </template>

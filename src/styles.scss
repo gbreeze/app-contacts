@@ -1,4 +1,6 @@
-body { padding-top: 70px; }
+body {
+  padding-top: 70px;
+}
 
 section {
   margin: 0 20px;
@@ -9,37 +11,39 @@ a:focus {
 }
 
 .navbar-nav li.loader {
-    margin: 12px 24px 0 6px;
+  margin: 12px 24px 0 6px;
 }
 
 .no-selection {
   margin: 20px;
 }
 
-.contact-list {
-  overflow-y: auto;
-  border: 1px solid #ddd;
-  padding: 10px;
+.list {
+  ul {
+    margin: 0;
+    padding: 0;
+    li.list-item {
+      list-style: none;
+      cursor: default;
+      padding: 10px;
+      background-color: lightgray;
+      &:hover {
+        background-color: gray;
+      }
+      &.active {
+        background-color: gray;
+      }
+      &.selected {
+        background-color: yellowgreen;
+      }
+    }
+  }
 }
-
-
-li.list-group-item {
-  list-style: none;
-}
-
-li.list-group-item > a {
-  text-decoration: none;
-}
-
-li.list-group-item.active > a {
-  color: white;
-}
-
 
 .move {
-    cursor: move;
-    margin: 5px 0;
-    background-color: darkgrey;
-    display: inline-block;
-    padding: 0 5px;
+  cursor: move;
+  margin: 5px 0;
+  background-color: darkgrey;
+  display: inline-block;
+  padding: 0 5px;
 }

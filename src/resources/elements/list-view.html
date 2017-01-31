@@ -1,9 +1,9 @@
 <template>
 
-    <div class="list-view-container">
-        <p>list view</p>
-        <ul>
-            <li repeat.for="item of items">
+    <div class="list">
+        <ul class="items">
+            <li repeat.for="item of items" class="list-item ${item == $parent.currentItem ? 'active' : ''} ${item.selected ? 'selected' : ''}"
+                click.delegate="$parent.select(item)">
 
                 <!--
                     <slot> is not working :(

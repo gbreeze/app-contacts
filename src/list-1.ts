@@ -6,17 +6,23 @@ export class List1ViewModel {
 
     statusText: string
     data: Array<any>
+    selectionMode: boolean
+    itemsDraggable: boolean
 
 
     constructor(private api: WebAPI) {
 
+        this.loadList()
+
     }
+
 
     private created() {
 
     }
 
-    async click() {
+
+    async loadList() {
 
         console.info("on click")
         this.statusText = "on click"
@@ -32,5 +38,20 @@ export class List1ViewModel {
         console.log("doWork end")
 
     }
+
+
+    toggleSelectionMode() {
+
+        this.selectionMode = !this.selectionMode
+
+    }
+
+
+    toggleItemsDraggable() {
+
+        this.itemsDraggable = !this.itemsDraggable
+
+    }
+
 
 }
