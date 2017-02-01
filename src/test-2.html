@@ -9,13 +9,15 @@
 
         <ul class="animated-collection au-stagger">
             <li repeat.for="item of items" class="au-animate">
-                <span click.trigger="remove(item)">X</span> ${item}
+                <span click.trigger="remove(item)">${item}</span>
             </li>
         </ul>
 
-
-        <button click.trigger="click()">Test</button>
-
+        <div>
+            <br>
+            <button click.trigger="click()">Test</button>
+            <button click.trigger="customAnimation()">custom animation</button>
+        </div>
     </div>
 
 </template>

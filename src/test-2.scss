@@ -1,15 +1,36 @@
 div.test2 {
     ul {
         list-style: none;
-    }
-}
-
-@-webkit-keyframes swipeRight {
-    0% {
-        -webkit-transform: translate3d(-120%, 0, 0);
-    }
-    100% {
-        transform: translate3d(0, 0, 0);
+        li {
+            list-style: none;
+            background: #d1703c;
+            color: #fff;
+            //height: 0;
+            line-height: 2em;
+            margin: 0;
+            padding: 0 0.5em;
+            overflow: hidden;
+            width: 10em;
+            &.show {
+                height: 2em;
+                margin: 2px 0;
+            }
+        }
+        .fade li {
+            transition: all 0.4s ease-out;
+            opacity: 0;
+            height: 2em;
+        }
+        .fade li.show {
+            opacity: 1;
+        }
+        .slide-fade li {
+            transition: all 0.4s ease-out;
+            opacity: 0;
+        }
+        .slide-fade li.show {
+            opacity: 1;
+        }
     }
 }
 
@@ -19,15 +40,6 @@ div.test2 {
     }
     100% {
         transform: translate3d(0, 0, 0);
-    }
-}
-
-@-webkit-keyframes swipeLeft {
-    0% {
-        -webkit-transform: translate3d(0, 0, 0);
-    }
-    100% {
-        transform: translate3d(-120%, 0, 0);
     }
 }
 
@@ -44,20 +56,37 @@ div.test2 {
     overflow: hidden;
     padding: 1em;
     margin: -1em;
-    -webkit-animation-delay: 50ms;
     animation-delay: 50ms;
-}
-
-.animated-collection>li.au-enter {
-    transform: translate3d(-120%, 0, 0);
-}
-
-.animated-collection>li.au-enter-active {
-    -webkit-animation: swipeRight .4s;
-    animation: swipeRight .4s;
-}
-
-.animated-collection>li.au-leave-active {
-    -webkit-animation: swipeLeft .4s;
-    animation: swipeLeft .4s;
+    >li.au-enter {
+        transform: translate3d(-120%, 0, 0);
+    }
+    >li.au-enter-active {
+        animation: swipeRight .4s;
+    }
+    >li.au-leave-active {
+        animation: swipeLeft .4s;
+    }
+    &.background-animation-add {
+        animation: changeBack 2s;
+    }
+    &.background-animation-remove {
+        animation: swipeRight 2s;
+    }
+    @keyframes changeBack {
+        0% {
+            background-color: green;
+        }
+        25% {
+            background-color: red;
+        }
+        50% {
+            background-color: blue;
+        }
+        75% {
+            background-color: violet;
+        }
+        100% {
+            background-color: yellow;
+        }
+    }
 }
