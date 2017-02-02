@@ -9,6 +9,9 @@ export interface ListViewItem {
     selected: boolean
 }
 
+export interface ListViewGroup{
+    items:Array<ListViewItem>
+}
 
 @autoinject
 export class ListView {
@@ -25,6 +28,9 @@ export class ListView {
 
     /** Gets or sets a value that specifies how many ListView items can be selected. */
     @bindable selectionMode: boolean
+
+    /** Gets or sets the groups */
+    @bindable itemsGrouped?:Array<ListViewGroup>
 
     /** Gets or sets how the ListView reacts when the user taps or clicks an item. */
     // https://msdn.microsoft.com/en-us/library/windows/apps/hh701303.aspx
