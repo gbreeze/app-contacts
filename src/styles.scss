@@ -1,3 +1,11 @@
+// Symbol font face
+@font-face {
+    font-family: "Segoe UI Command";
+    src: local("Segoe MDL2 Assets");
+    font-weight: normal;
+    font-style: normal;
+}
+
 body {
   padding-top: 70px;
 }
@@ -18,32 +26,4 @@ a:focus {
   margin: 20px;
 }
 
-.list {
-  ul {
-    margin: 0;
-    padding: 0;
-    li.list-item {
-      list-style: none;
-      cursor: default;
-      padding: 10px;
-      background-color: lightgray;
-      &:hover {
-        background-color: gray;
-      }
-      &.active {
-        background-color: gray;
-      }
-      &.selected {
-        background-color: yellowgreen;
-      }
-    }
-  }
-}
 
-.move {
-  cursor: move;
-  margin: 5px 0;
-  background-color: darkgrey;
-  display: inline-block;
-  padding: 0 5px;
-}

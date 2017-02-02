@@ -1,7 +1,7 @@
 <template>
 
-    <div class="list">
-        <ul class="items">
+    <div class="au-list">
+        <ul class="items selection-mode">
             <li repeat.for="item of items" class="list-item ${item == $parent.currentItem ? 'active' : ''} ${item.selected ? 'selected' : ''}"
                 click.delegate="$parent.select(item)">
 
@@ -20,13 +20,13 @@
                 </template>-->
 
 
-
-                <template replaceable part="item-template">
-                    <p>item</p>
-                </template>
-
+                <div class="list-item-container">
+                    <template replaceable part="item-template">
+                        <p>item</p>
+                    </template>
+                </div>
+                <div class="selection-checkmark">&#xE73A;</div>
             </li>
         </ul>
-
     </div>
 </template>

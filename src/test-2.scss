@@ -3,52 +3,19 @@ div.test2 {
         list-style: none;
         li {
             list-style: none;
-            background: #d1703c;
+            background-color: #d1703c;
             color: #fff;
-            //height: 0;
             line-height: 2em;
             margin: 0;
             padding: 0 0.5em;
             overflow: hidden;
             width: 10em;
-            &.show {
-                height: 2em;
-                margin: 2px 0;
-            }
-        }
-        .fade li {
-            transition: all 0.4s ease-out;
-            opacity: 0;
             height: 2em;
+            margin: 2px 0;
+            height: 2em;
+            transition: background-color .5s;
+            cursor: default;
         }
-        .fade li.show {
-            opacity: 1;
-        }
-        .slide-fade li {
-            transition: all 0.4s ease-out;
-            opacity: 0;
-        }
-        .slide-fade li.show {
-            opacity: 1;
-        }
-    }
-}
-
-@keyframes swipeRight {
-    0% {
-        transform: translate3d(-120%, 0, 0);
-    }
-    100% {
-        transform: translate3d(0, 0, 0);
-    }
-}
-
-@keyframes swipeLeft {
-    0% {
-        transform: translate3d(0, 0, 0);
-    }
-    100% {
-        transform: translate3d(-120%, 0, 0);
     }
 }
 
@@ -57,36 +24,51 @@ div.test2 {
     padding: 1em;
     margin: -1em;
     animation-delay: 50ms;
-    >li.au-enter {
-        transform: translate3d(-120%, 0, 0);
-    }
-    >li.au-enter-active {
-        animation: swipeRight .4s;
-    }
-    >li.au-leave-active {
-        animation: swipeLeft .4s;
-    }
     &.background-animation-add {
         animation: changeBack 2s;
     }
     &.background-animation-remove {
         animation: swipeRight 2s;
     }
-    @keyframes changeBack {
-        0% {
-            background-color: green;
+    >li {
+        &.au-enter {
+            opacity: 0;
+            height: 0;
         }
-        25% {
+        &.au-enter-active {
+            animation: show .2s;
+        }
+        &.au-leave-active {
+            animation: hide .2s;
+        }
+        &:hover {
             background-color: red;
         }
-        50% {
-            background-color: blue;
-        }
-        75% {
-            background-color: violet;
-        }
-        100% {
-            background-color: yellow;
-        }
+    }
+}
+
+@keyframes hide {
+    to {
+        opacity: 0;
+        height: 0;
+    }
+}
+
+@keyframes show {
+    to {
+        opacity: 1;
+        height: 2em;
+    }
+}
+
+@keyframes changeBack {
+    0% {
+        background-color: green;
+    }
+    50% {
+        background-color: blue;
+    }
+    100% {
+        background-color: yellow;
     }
 }

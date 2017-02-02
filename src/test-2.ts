@@ -1,6 +1,11 @@
 import { autoinject, Animator } from 'aurelia-framework';
 import { WebAPI } from './web-api';
 
+
+//// info
+// http://blog.aurelia.io/2015/07/17/animating-apps-with-aurelia-part-1/
+
+
 @autoinject
 export class Test2ViewModel {
 
@@ -29,7 +34,6 @@ export class Test2ViewModel {
             'background-animation')
 
         this.animator.enter(this.element.querySelector('li'))
-
     }
 
 }

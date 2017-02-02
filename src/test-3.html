@@ -1,9 +1,10 @@
 <template>
 
+    <require from="./test-3.css"></require>
     <require from="./resources/elements/list-view"></require>
 
 
-    <h1>List 1</h1>
+    <h1>Test 3</h1>
 
     <hr>
 
@@ -18,8 +19,11 @@
             http://stackoverflow.com/questions/32405372/binding-to-a-custom-element-in-a-template-part-in-aurelia
             http://plnkr.co/edit/PkXysZ?p=preview
         -->
+
         <template replace-part="item-template">
+            <div class="list-item-template">
             ${item.firstName} - ${item.lastName}
+            </div>
         </template>
 
         <template replace-part="group-header-template">

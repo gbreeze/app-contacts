@@ -11,10 +11,10 @@ export class App {
   configureRouter(config: RouterConfiguration, router: Router) {
     config.title = 'Test App';
     config.map([
-      { route: '', moduleId: 'list-1', title: 'list 1' },
+      { route: '', moduleId: 'test-3', title: 'test 3' },
       { route: 'test-1', moduleId: 'test-1', name: 'test 1' },
       { route: 'test-2', moduleId: 'test-2', name: 'test 2' },
-      { route: 'list-1', moduleId: 'list-1', name: 'list 1' }
+      { route: 'test-3', moduleId: 'test-3', name: 'test 3' }
     ]);
 
     this.router = router;
