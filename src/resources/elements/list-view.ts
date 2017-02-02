@@ -1,4 +1,4 @@
-import { autoinject, bindable } from 'aurelia-framework';
+import { autoinject, bindable, Animator } from 'aurelia-framework';
 
 // import * as Sortable from 'sortablejs' // working but no with d.ts support
 // import { Sortable } from 'sortablejs' // d.ts support but not working
@@ -32,7 +32,7 @@ export class ListView {
 
     private sortablejs: Sortable
 
-    constructor() {
+    constructor(private animator: Animator, private element: Element) {
 
     }
 

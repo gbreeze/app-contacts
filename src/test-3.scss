@@ -5,7 +5,6 @@
         //list-style: none;
         &.selection-mode {
             li div.list-item-container {
-                transition: transform 250ms cubic-bezier(0.17, 0.79, 0.215, 1.0025);
                 transform: translate(40px, 0px);
             }
             .selection-checkmark {
@@ -22,6 +21,9 @@
                 cursor: default;
                 padding: 0;
                 background-color: lightgray;
+                .list-item-container {
+                    transition: transform 250ms cubic-bezier(0.17, 0.79, 0.215, 1.0025);
+                }
                 &:hover {
                     background-color: gray;
                 }
@@ -51,8 +53,7 @@
     padding: 0 5px;
 }
 
-
 // custom style
-.list-item-template{
+.list-item-template {
     padding: 10px;
 }
