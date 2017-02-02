@@ -1,7 +1,7 @@
 <template>
 
     <div class="au-list">
-        <ul class="items selection-mode">
+        <ul class="items ${selectionMode ? 'selection-mode' : ''} ">
             <li repeat.for="item of items" class="list-item ${item == $parent.currentItem ? 'active' : ''} ${item.selected ? 'selected' : ''}"
                 click.delegate="$parent.select(item)">
 
