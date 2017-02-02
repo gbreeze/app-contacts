@@ -63,14 +63,14 @@ export class ListView {
 
     private selectionModeChanged(newValue: boolean, oldValue: boolean) {
 
-        if (!newValue) {
-            this.items.forEach(item => {
+        // if (!newValue) {
+        //     this.items.forEach(item => {
 
-                if (item.selected)
-                    item.selected = false
+        //         if (item.selected)
+        //             item.selected = false
 
-            })
-        }
+        //     })
+        // }
 
     }
 
