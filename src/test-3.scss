@@ -1,72 +1,72 @@
-            .au-list {
-                ul.items {
-                    margin: 0;
-                    padding: 0;
-                    //list-style: none;
-                    &.selection-mode {
-                        li {
-                            &.list-item {
-                                &.selected {
-                                    background-color: lightgray;
-                                    .selection-checkmark::before {
-                                        content: "\E73A";
-                                    }
-                                }
-                                &.active {
-                                    background-color: lightgray;
-                                }
-                                .list-item-container {
-                                    transform: translate(40px, 0px);
-                                }
-                                .selection-checkmark {
-                                    left: 13px;
-                                    top: 50%;
-                                    margin-top: -14px;
-                                    display: block;
-                                }
-                            }
+.au-list {
+    ul.items {
+        margin: 0;
+        padding: 0;
+        //list-style: none;
+        &.selection-mode {
+            li {
+                &.list-item {
+                    &.selected {
+                        background-color: lightgray;
+                        .selection-checkmark::before {
+                            content: "\E73A";
                         }
                     }
-                    li {
-                        &.list-item {
-                            position: relative;
-                            list-style: none;
-                            cursor: default;
-                            padding: 0;
-                            background-color: lightgray;
-                            .list-item-container {
-                                transition: transform 250ms cubic-bezier(0.17, 0.79, 0.215, 1.0025);
-                            }
-                            &:hover {
-                                background-color: gray !important;
-                            }
-                            &.active {
-                                background-color: gray;
-                            }
-                        }
-                        .selection-checkmark {
-                            position: absolute;
-                            padding: 2px;
-                            font-family: "Segoe UI Command", "Symbols";
-                            font-size: 18px;
-                            display: none;
-                            &::before {
-                                content: "\E739";
-                            }
-                        }
+                    &.active {
+                        background-color: lightgray;
+                    }
+                    .list-item-container {
+                        transform: translate(40px, 0px);
+                    }
+                    .selection-checkmark {
+                        left: 13px;
+                        top: 50%;
+                        margin-top: -14px;
+                        display: block;
                     }
                 }
             }
-            
-            .move {
-                cursor: move;
-                margin: 5px 0;
-                background-color: darkgrey;
-                display: inline-block;
-                padding: 0 5px;
+        }
+        li {
+            &.list-item {
+                position: relative;
+                list-style: none;
+                cursor: default;
+                padding: 0;
+                background-color: lightgray;
+                .list-item-container {
+                    transition: transform 250ms cubic-bezier(0.17, 0.79, 0.215, 1.0025);
+                }
+                &:hover {
+                    background-color: gray !important;
+                }
+                &.active {
+                    background-color: gray;
+                }
             }
-            
-            // custom style
-            .list-item-template {
-                padding: 10px;
+            .selection-checkmark {
+                position: absolute;
+                padding: 2px;
+                font-family: "Segoe UI Command", "Symbols";
+                font-size: 18px;
+                display: none;
+                &::before {
+                    content: "\E739";
+                }
             }
+        }
+    }
+}
+
+.move {
+    cursor: move;
+    margin: 5px 0;
+    background-color: darkgrey;
+    display: inline-block;
+    padding: 0 5px;
+}
+
+// custom style
+.list-item-template {
+    padding: 10px;
+}
