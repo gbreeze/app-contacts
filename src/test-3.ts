@@ -39,6 +39,9 @@ export class List1ViewModel {
 
     }
 
+    onContextMenu(item) {
+        console.info('onContextMenu', item)
+    }
 
     toggleSelectionMode() {
 

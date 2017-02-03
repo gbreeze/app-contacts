@@ -20,8 +20,8 @@
         -->
 
         <template replace-part="item-template">
-            <div class="list-item-template">
-            ${item.firstName} - ${item.lastName}
+            <div class="list-item-template" contextmenu.delegate="onContextMenu(item)">
+                ${item.firstName} - ${item.lastName}
             </div>
         </template>
 
