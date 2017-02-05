@@ -2,7 +2,7 @@ import { autoinject } from 'aurelia-framework';
 import { WebAPI } from './web-api';
 
 @autoinject
-export class List1ViewModel {
+export class Test3ViewModel {
 
     statusText: string
     data: Array<any>

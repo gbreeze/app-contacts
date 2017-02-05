@@ -30,6 +30,16 @@ div.test2 {
     &.background-animation-remove {
         animation: swipeRight 2s;
     }
+    // &.au-enter {
+    //     opacity: 0;
+    //     background-color: red;
+    // }
+    // &.au-enter-active {
+    //     animation: show 2s;
+    // }
+    // &.au-leave-active {
+    //     animation: hide 2s;
+    // }
     >li {
         &.au-enter {
             opacity: 0;
@@ -57,7 +67,8 @@ div.test2 {
 @keyframes show {
     to {
         opacity: 1;
-        height: 2em;
+        //height: 2em;
+        background: green;
     }
 }
 

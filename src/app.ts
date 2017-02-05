@@ -14,7 +14,8 @@ export class App {
       { route: '', moduleId: 'test-3', title: 'test 3' },
       { route: 'test-1', moduleId: 'test-1', name: 'test 1' },
       { route: 'test-2', moduleId: 'test-2', name: 'test 2' },
-      { route: 'test-3', moduleId: 'test-3', name: 'test 3' }
+      { route: 'test-3', moduleId: 'test-3', name: 'test 3' },
+      { route: 'test-4', moduleId: 'test-4', name: 'test 4' }
     ]);
 
     this.router = router;
