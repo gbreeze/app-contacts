@@ -14,4 +14,8 @@ export class Test4ViewModel {
 
     }
 
+    click(){
+        alert('click!')
+    }
+
 }
