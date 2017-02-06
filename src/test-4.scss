@@ -10,15 +10,20 @@
     bottom: 0;
     left: 0;
     right: 0;
-    transition: min-height .25s;
-    min-height: 48px;
+    transition: height .2s;
+    height: 48px;
     display: flex;
     float: right;
     width: 100%;
     &.open {
-        min-height: 60px;
+        height: 60px;
+        .main-items-container {
+            button label {
+                opacity: 1;
+            }
+        }
         .second-items-container {
-            opacity: 1;
+            //opacity: 1;
             transform: translateY(0%);
         }
     }
@@ -32,25 +37,55 @@
             //display: inline-block;
             margin-left: auto;
         }
-        button.ellipsis {
-            min-height: 8px;
-            >span::before {
-                content: "\E10C";
-                font-size: 16px;
+        button {
+            padding-top: 10px;
+            .command-icon {
                 font-family: "Segoe UI Command", "Symbols";
+                //vertical-align: middle;
+                font-size: 20px;
+                line-height: 24px;
+                outline: none;
+                margin: 0 20px;
+            }
+            label {
+                opacity: 0;
+                transition: opacity .1s;
+                font-family: "Segoe UI", sans-serif, "Segoe MDL2 Assets", "Symbols", "Segoe UI Emoji";
+                font-size: 12px;
+                font-weight: 400;
+                line-height: 1.167;
+                position: relative;
+                line-height: 16px;
+                display: block;
+                max-width: 66px;
+                //margin-top: -10px;
+                margin-bottom: 6px;
+                padding: 0;
+                overflow: hidden;
+                word-wrap: break-word;
+                word-break: keep-all;
+                outline: none;
+            }
+            &.ellipsis {
+                min-height: 8px;
+                >span::before {
+                    content: "\E10C";
+                    font-size: 16px;
+                    font-family: "Segoe UI Command", "Symbols";
+                }
             }
         }
     }
     .second-items-container {
         z-index: 9;
-        opacity: 0;
+        //opacity: 0;
         position: absolute;
         left: 0;
         right: 0;
         bottom: 100%;
         background-color: #f2f2f2;
         padding-bottom: 24px;
-        transition: transform .25s;
+        transition: transform .2s;
         transform: translateY(100%);
         button {
             display: block;
@@ -62,6 +97,7 @@
         }
     }
     button {
+        cursor: default;
         touch-action: manipulation;
         background: none;
         background-clip: border-box;
@@ -102,6 +138,21 @@
     top: -5%;
     position: fixed;
     touch-action: none;
-    outline: 1px solid Purple; /*Necessary to block passthrough over webviews*/
+    outline: 1px solid Purple;
+    /*Necessary to block passthrough over webviews*/
     -ms-high-contrast-adjust: none;
+}
+
+//// other styles
+.win-label {
+    font-family: "Segoe UI", sans-serif, "Segoe MDL2 Assets", "Symbols", "Segoe UI Emoji";
+    font-size: 15px;
+    line-height: inherit;
+    min-width: 112px;
+    max-width: none;
+    white-space: nowrap;
+    text-overflow: clip;
+    margin: 0px;
+    padding: 0px 12px;
+    font-weight: 400;
 }
