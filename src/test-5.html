@@ -1,0 +1,28 @@
+<template>
+
+    <require from="./test-5.css"></require>
+
+
+    <h1>Test 5</h1>
+
+    <ul if.bind="show">
+        <li repeat.for="group of listService.groups">
+            ${group.name}
+            <ul>
+                <li repeat.for="item of group.items">
+                    ${item.name}
+                </li>
+            </ul>
+        </li>
+
+    </ul>
+
+    <hr>
+    <button click.trigger="listService.swapList()">Swap list</button>
+    <button click.trigger="listService.sortList()">Sort list</button>
+    <button click.trigger="listService.change()">Change first item</button>
+
+
+
+
+</template>
