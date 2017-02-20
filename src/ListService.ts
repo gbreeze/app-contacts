@@ -7,21 +7,18 @@ export class ListService {
         { id: 3, name: 'cc' }
     )
 
-    groups = new Array<{ name: string, items: { id: number, name: string }[] }>()
-
     constructor() {
-        this.groups.push({ name: 'xx', items: this.list })
 
     }
 
     sortList() {
-        this.groups[0].items.sort((left, right) => {
-            return left.name.localeCompare(right.name, undefined, { numeric: true, sensitivity: 'base' });
+        this.list.sort((left, right) => {
+            return left.name.localeCompare(right.name)
         })
     }
 
     swapList() {
-        let list = this.groups[0].items
+        let list = this.list
 
         let newIndex = list.length - 1
         let oldIndex = 0
@@ -30,8 +27,12 @@ export class ListService {
         list.splice(oldIndex, 1, temp)
     }
 
-    change() {
-        this.groups[0].items[0].name = 'zz'
+    changeToYY() {
+        this.list[0].name = 'yy'
+    }
 
-    }    
+    changeToZZ() {
+        this.list[0].name = 'zz'
+    }
+
 }

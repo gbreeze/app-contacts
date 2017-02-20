@@ -1,5 +1,6 @@
 import { autoinject } from 'aurelia-framework'
 import { ListService } from './ListService'
+import { Router, RouteConfig, NavigationInstruction, RedirectToRoute } from 'aurelia-router'
 
 
 @autoinject
@@ -8,7 +9,7 @@ export class Test5ViewModel {
 
     show = false
 
-    constructor(private listService: ListService) {
+    constructor(private listService: ListService, private router: Router) {
     }
 
     canActivate() {
@@ -25,6 +26,10 @@ export class Test5ViewModel {
 
     private created() {
 
+    }
+
+    toMainPage() {
+        this.router.navigate('test-1')
     }
 
 

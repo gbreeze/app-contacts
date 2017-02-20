@@ -6,23 +6,18 @@
     <h1>Test 5</h1>
 
     <ul if.bind="show">
-        <li repeat.for="group of listService.groups">
-            ${group.name}
-            <ul>
-                <li repeat.for="item of group.items">
-                    ${item.name}
-                </li>
-            </ul>
+        <li repeat.for="item of listService.list">
+            ${item.name}
+        </li>
         </li>
 
     </ul>
 
     <hr>
-    <button click.trigger="listService.swapList()">Swap list</button>
+    <!--<button click.trigger="listService.swapList()">Swap list</button>-->
+    <button click.trigger="listService.changeToYY()">Change first item to yy</button>
+    <button click.trigger="toMainPage()">Navigate to main page</button>
+    <button click.trigger="listService.changeToZZ()">Change first item to zz</button>
     <button click.trigger="listService.sortList()">Sort list</button>
-    <button click.trigger="listService.change()">Change first item</button>
-
-
-
 
 </template>
